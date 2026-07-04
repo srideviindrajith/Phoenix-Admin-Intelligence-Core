@@ -1,3 +1,89 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#070A0F] text-gray-200 font-sans;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-space;
+  }
+}
+
+/* Custom styles */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 106, 0, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 106, 0, 0.03) 1px, transparent 1px);
+}
+
+.cyber-grid-dots {
+  background-size: 20px 20px;
+  background-image: radial-gradient(circle, rgba(255, 106, 0, 0.07) 1px, transparent 1px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070A0F;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 106, 0, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 106, 0, 0.45);
+}
+
+/* Scanline Animation */
+.scanline {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 106, 0, 0),
+    rgba(255, 106, 0, 0) 50%,
+    rgba(255, 106, 0, 0.05) 50%,
+    rgba(255, 106, 0, 0.05)
+  );
+  background-size: 100% 4px;
+}
+
+@keyframes scan {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(100%);
+  }
+}
+
+.animate-scan {
+  animation: scan 8s linear infinite;
+}
+
+/* Glassmorphism Cards */
+.glass-panel {
+  background: rgba(17, 23, 34, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 106, 0, 0.08);
+}
+
+.glass-panel-glow {
+  background: rgba(17, 23, 34, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 106, 0, 0.15);
+  box-shadow: 0 0 20px rgba(255, 106, 0, 0.03);
+}
+
+.text-glow-orange {
+  text-shadow: 0 0 10px rgba(255, 106, 0, 0.3);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.3);
+}
